@@ -8,13 +8,23 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import ChildComponent from './ChildComponent.vue'
+<script>
+import ChildComponent from './ChildComponent.vue';
 
-const parentMessage = ref('Hello from parent')
-
-function handleEvent(payload) {
-  console.log(payload)
-}
+export default {
+  name: 'E05ParentComponent',
+  components: {
+    ChildComponent,
+  },
+  data() {
+    return {
+      parentMessage: 'Hello from parent',
+    };
+  },
+  methods: {
+    handleEvent(payload) {
+      console.log(payload);
+    },
+  },
+};
 </script>
