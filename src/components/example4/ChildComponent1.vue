@@ -1,19 +1,24 @@
 <!-- ChildComponent1.vue -->
 <template>
+  <h3> Child 1 </h3>
   <div>
-    <p>{{ message }}</p>
-    <button @click="emit('custom-event', 'Hello from child 1')">Emit Event</button>
+    <p>{{ sharedMessage }}</p>
+  </div>
+
+  <h3> Child 2 </h3>
+  <div>
+    <ChildComponent2 />
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  message: {
-    type: String,
-    required: true,
-  },
-})
-const emit = defineEmits(['custom-event'])
+<script>
+import ChildComponent2 from "@/components/example4/ChildComponent2.vue";
+
+export default {
+  name: "ChildComponent1",
+  components: { ChildComponent2 },
+  inject: ["sharedMessage"],
+};
 </script>
 
 <style scoped>

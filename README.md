@@ -1,11 +1,5 @@
 # what is changed?
 
-## 공통 변경점
-```
-
-1. data()로 반환하지 않고, ref/reactive/computed로 선언
-2. option api -> composition api로 변경
-```
 
 ## example1
 ![1](images/1.png)
@@ -46,15 +40,14 @@ props와 emit의 사용방법 변경
 
 ## example4
 ![6](images/6.png)
-```
-
-
-
-```
 
 ## example5
 ![7,8,9](images/7,8,9.png)
 ```
+1. beforeDestroy → beforeUnmount
+2. defineOptions() 대신 보조 <script>의 export default { name: ... }
+3. title prop → initialTitle로 변경
+4. 내부에 const title = ref(props.initialTitle)
 
 ```
 
@@ -64,10 +57,9 @@ props와 emit의 사용방법 변경
 ![12](images/12.png)
 ```
 
+1. <script setup> 도입
+2. ref 타입에 TS 제네릭 사용: ref<HTMLInputElement | null>(null)
 ```
-
-## 과제가 끝난 뒤의 콘솔
-![console](images/console.png)
 
 # vue-demo
 
